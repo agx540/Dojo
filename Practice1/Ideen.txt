@@ -16,4 +16,6 @@
 8. Installer
 9. Dokumentation
 9.1 Architektur
-
+10. Datenbankanbindung für Model
+11. Anzeige der AlbenInterpreten abhängig der Interpreten aller Songs auf einem Album
+12. Beim Selektieren eines Albuminterpreten nur die Songs des dazugehörigen Interpreten anzeigen

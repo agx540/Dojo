@@ -16,15 +16,11 @@ namespace WpfApp
         {
             Repository = new Repository();
             CreateTestData();
-            CreateTestData();
-            CreateTestData();
-            CreateTestData();
-            CreateTestData();
-
         }
 
         private void CreateTestData()
         {
+            #region Erstes Album
             var album = new Album
             {
                 Id = 1,
@@ -34,8 +30,20 @@ namespace WpfApp
             album.Artists.Add(new Artist
             {
                 Id = 1,
-                Name = "VA"
+                Name = "Detlef Jöcker"
             });
+            album.Artists.Add(new Artist
+            {
+                Id = 2,
+                Name = "Volker Rossin"
+            });
+            album.Artists.Add(new Artist
+            {
+                Id = 3,
+                Name = "Robert Metcalf"
+            });
+
+
             var song1 = new Song
             {
                 Id = 1,
@@ -44,9 +52,20 @@ namespace WpfApp
             };
             song1.Artists.Add(new Artist
             {
-                Id = 2,
-                Name = "Unknown"
+                Id = 1,
+                Name = "Alex"
             });
+            song1.Artists.Add(new Artist
+            {
+                Id = 2,
+                Name = "Sasa"
+            });
+            song1.Artists.Add(new Artist
+            {
+                Id = 3,
+                Name = "Tobi"
+            });
+
             var song2 = new Song
             {
                 Id = 2,
@@ -55,19 +74,29 @@ namespace WpfApp
             };
             song2.Artists.Add(new Artist
             {
-                Id = 3,
-                Name = "Tobi"
+                Id = 4,
+                Name = "Hans"
+            });
+            song2.Artists.Add(new Artist
+            {
+                Id = 5,
+                Name = "Peter"
+            });
+            song2.Artists.Add(new Artist
+            {
+                Id = 6,
+                Name = "Klaus"
             });
 
             album.Songs.Add(song1);
             album.Songs.Add(song2);
+            #endregion
 
-            //===================
-
+            #region Zweites Album
             var album2 = new Album
             {
                 Id = 2,
-                Name = "Meine erste Porno Soundtracks",
+                Name = "Mein erster Porno Soundtracks",
                 PublishYear = 1990,
             };
             album2.Artists.Add(new Artist
@@ -104,6 +133,7 @@ namespace WpfApp
 
             Repository.Albums.Add(album);
             Repository.Albums.Add(album2);
+#endregion
         }
     }
 }
