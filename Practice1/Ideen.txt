@@ -1,0 +1,6 @@
+1. Automapper
+2. Unity
+3. Model persistieren
+4. Web Frontend
+5. WPF Style hinzufügen
+6. 
