@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="WpfApp.Views.ArtistView"
+﻿<UserControl x:Class="WpfApp.Views.AlbumListView"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -7,11 +7,15 @@
              xmlns:viewModel="clr-namespace:WpfApp.ViewModel"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300"
-             d:DataContext="{d:DesignInstance Type=viewModel:SongViewModel, IsDesignTimeCreatable=True}">
+             d:DataContext="{d:DesignInstance Type=viewModel:AlbumListViewModel, IsDesignTimeCreatable=True}"
+             >
     <Grid>
-        <StackPanel Orientation="Horizontal">
-            <TextBlock Text="{Binding Id}"/>
-            <TextBox Text="{Binding Name}"/>
-        </StackPanel>
+        <ListView ItemsSource="{Binding Albums}" SelectedItem="{Binding SelectedAlbum}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding Name}"></TextBlock>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
     </Grid>
 </UserControl>

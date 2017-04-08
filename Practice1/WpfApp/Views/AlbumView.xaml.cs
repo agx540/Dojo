@@ -12,16 +12,15 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using WpfApp.ViewModel;
 
-namespace WpfApp
+namespace WpfApp.Views
 {
     /// <summary>
-    /// Interaktionslogik für MainWindow.xaml
+    /// Interaktionslogik für AlbumView.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class AlbumView : UserControl
     {
-        public MainWindow()
+        public AlbumView()
         {
             InitializeComponent();
         }

@@ -31,7 +31,7 @@ namespace WpfApp.ViewModel
             set { SetProperty(ref _name, value); }
         }
 
-        private ObservableCollection<ArtistViewModel> _artists;
+        private ObservableCollection<ArtistViewModel> _artists = new ObservableCollection<ArtistViewModel>();
         public ObservableCollection<ArtistViewModel> Artists
         {
             get { return _artists; }
@@ -46,7 +46,7 @@ namespace WpfApp.ViewModel
         }
 
 
-        private ObservableCollection<SongViewModel> _songs;
+        private ObservableCollection<SongViewModel> _songs = new ObservableCollection<SongViewModel>();
         public ObservableCollection<SongViewModel> Songs
         {
             get { return _songs; }
@@ -60,6 +60,10 @@ namespace WpfApp.ViewModel
             set { SetProperty(ref _selectedSong, value); }
         }
 
+        public AlbumViewModel()
+        {
+
+        }
 
         public AlbumViewModel(Album album)
         {

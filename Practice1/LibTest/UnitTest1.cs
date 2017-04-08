@@ -24,14 +24,21 @@ namespace LibTest
             Assert.IsNotNull(album);
         }
 
-
         [TestMethod]
         public void Test_FormattedSongLength()
         {
             var song = new Song { Length = TimeSpan.FromMinutes(3.5) };
             var songVM = new SongViewModel(song);
             Assert.AreEqual("03:30", songVM.FormattedLength);
+        }
 
+        [TestMethod]
+        public void Test_SetFormattedSongLength()
+        {
+            var song = new Song { Length = TimeSpan.FromMinutes(0.0) };
+            var songVM = new SongViewModel(song);
+            songVM.FormattedLength = "03:30";
+            Assert.AreEqual("03:30", songVM.FormattedLength);
         }
     }
 }
