@@ -1,0 +1,17 @@
+﻿<UserControl x:Class="WpfApp.Views.SongView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WpfApp.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="20" d:DesignWidth="300">
+    <Grid>
+        <StackPanel Orientation="Horizontal">
+            <TextBlock Text="{Binding Id}"/>
+            <TextBox Text="{Binding Name}"/>
+            <TextBox Text="{Binding Length}"/>
+            
+        </StackPanel>
+    </Grid>
+</UserControl>

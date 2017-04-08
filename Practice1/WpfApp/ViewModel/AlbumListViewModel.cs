@@ -9,13 +9,24 @@ using WpfApp.Model;
 
 namespace WpfApp.ViewModel
 {
-    public class AlbumListViewModel
+    public class AlbumListViewModel : ObservableObject
     {
+        private AlbumViewModel _selectedAlbum;
+
+        public AlbumViewModel SelectedAlbum
+        {
+            get { return _selectedAlbum; }
+            set { SetProperty(ref _selectedAlbum, value); }
+        }
+
         public ObservableCollection<AlbumViewModel> Albums { get; set; }
+
         public AlbumListViewModel(IEnumerable<Album> albums)
         {
             Albums = new ObservableCollection<AlbumViewModel>(albums.Select(a => new AlbumViewModel(a)));
 
+            if (Albums.Any())
+                SelectedAlbum = Albums.First();
         }
     }
 }

@@ -38,12 +38,32 @@ namespace WpfApp.ViewModel
             set { SetProperty(ref _artists, value); }
         }
 
+        private ArtistViewModel _selectedArtist;
+        public ArtistViewModel SelectedArtist
+        {
+            get { return _selectedArtist; }
+            set { SetProperty(ref _selectedArtist, value); }
+        }
+
+        public string FormattedLength
+        {
+            get { return $"{Length.ToString("mm")}:{Length.ToString("ss")}"; }
+            set
+            {
+                var dt = DateTime.ParseExact(value, "mm:ss", null);
+                Length = new TimeSpan(0, 0, dt.Minute, dt.Second, 0);
+            }
+        }
+
+
+
         public SongViewModel(Song song)
         {
             Id = song.Id;
             Name = song.Name;
             Length = song.Length;
             Artists = new ObservableCollection<ArtistViewModel>(song.Artists.Select(a => new ArtistViewModel(a)));
+            SelectedArtist = Artists?.FirstOrDefault();
         }
     }
 }

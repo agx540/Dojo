@@ -7,6 +7,16 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
         
+        <ListView Name="AlbenListe"></ListView>
+        <ListView Name="SongArtistListe"></ListView>
     </Grid>
 </Window>
