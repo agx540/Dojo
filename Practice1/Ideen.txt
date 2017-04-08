@@ -13,4 +13,7 @@
 7.2 GUI Tests
 7.3 Acceptance Tests
 7.4 Capacity Tests
-8 Installer
+8. Installer
+9. Dokumentation
+9.1 Architektur
+
