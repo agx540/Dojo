@@ -1,24 +1,29 @@
-﻿<UserControl x:Class="WpfApp.Views.SongView"
+﻿<UserControl x:Class="WpfApp.Views.AlbumView"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:WpfApp.Views"
-             xmlns:viewModel="clr-namespace:WpfApp.ViewModel"
+              xmlns:viewModel="clr-namespace:WpfApp.ViewModel"
              mc:Ignorable="d" 
-             d:DesignHeight="200" d:DesignWidth="300"
-             d:DataContext="{d:DesignInstance Type=viewModel:SongViewModel, IsDesignTimeCreatable=True}"
-             >
+             d:DesignHeight="300" d:DesignWidth="300"
+             d:DataContext="{d:DesignInstance Type=viewModel:AlbumViewModel, IsDesignTimeCreatable=True}">
     <Grid>
         <StackPanel Orientation="Vertical">
             <TextBlock Text="{Binding Id}"/>
             <TextBox Text="{Binding Name}"/>
-            <TextBox Text="{Binding FormattedLength}"/>
-            <TextBlock Margin="15,0" Text="Interpreten:"/>
+            <TextBlock Text="{Binding PublishYear}"/>
             <ListView ItemsSource="{Binding Artists}" SelectedItem="{Binding SelectedArtist}">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <local:ArtistView></local:ArtistView>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <ListView ItemsSource="{Binding Songs}" SelectedItem="{Binding SelectedSong}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <local:SongView></local:SongView>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>

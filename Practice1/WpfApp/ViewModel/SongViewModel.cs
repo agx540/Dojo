@@ -31,7 +31,7 @@ namespace WpfApp.ViewModel
             set { SetProperty(ref _length, value); }
         }
 
-        private ObservableCollection<ArtistViewModel> _artists;
+        private ObservableCollection<ArtistViewModel> _artists = new ObservableCollection<ArtistViewModel>();
         public ObservableCollection<ArtistViewModel> Artists
         {
             get { return _artists; }
@@ -47,7 +47,7 @@ namespace WpfApp.ViewModel
 
         public string FormattedLength
         {
-            get { return $"{Length.ToString("mm")}:{Length.ToString("ss")}"; }
+            get { return $"{Length:mm}:{Length:ss}"; }
             set
             {
                 var dt = DateTime.ParseExact(value, "mm:ss", null);
@@ -55,7 +55,14 @@ namespace WpfApp.ViewModel
             }
         }
 
-
+        public SongViewModel()
+        {
+            Id = 1;
+            Name = "Songname";
+            Length = new TimeSpan(0, 3, 30);
+            Artists.Add(new ArtistViewModel(new Artist() { Id = 1, Name = "Bob Dylan" }));
+            Artists.Add(new ArtistViewModel(new Artist() { Id = 2, Name = "Bob Marley" }));
+        }
 
         public SongViewModel(Song song)
         {

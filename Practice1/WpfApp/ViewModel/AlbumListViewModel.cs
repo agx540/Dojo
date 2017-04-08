@@ -19,7 +19,13 @@ namespace WpfApp.ViewModel
             set { SetProperty(ref _selectedAlbum, value); }
         }
 
-        public ObservableCollection<AlbumViewModel> Albums { get; set; }
+        public ObservableCollection<AlbumViewModel> Albums { get; set; } = new ObservableCollection<AlbumViewModel>();
+
+
+        public AlbumListViewModel()
+        {
+            
+        }
 
         public AlbumListViewModel(IEnumerable<Album> albums)
         {
