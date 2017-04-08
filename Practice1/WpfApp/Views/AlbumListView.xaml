@@ -10,10 +10,21 @@
              d:DataContext="{d:DesignInstance Type=viewModel:AlbumListViewModel, IsDesignTimeCreatable=True}"
              >
     <Grid>
-        <ListView ItemsSource="{Binding Albums}" SelectedItem="{Binding SelectedAlbum}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <TextBlock Margin="5,5" FontSize="16" Text="Albenübersicht"></TextBlock>
+
+        <ListView Grid.Row="1" 
+                  Margin="5,0"
+                  ItemsSource="{Binding Albums}" 
+                  SelectedItem="{Binding SelectedAlbum}">
+            
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <TextBlock Text="{Binding Name}"></TextBlock>
+                    <TextBlock FontSize="14" 
+                               Text="{Binding Name}"/>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>

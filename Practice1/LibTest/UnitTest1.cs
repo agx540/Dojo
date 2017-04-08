@@ -40,11 +40,5 @@ namespace LibTest
             songVM.FormattedLength = "03:30";
             Assert.AreEqual("03:30", songVM.FormattedLength);
         }
-
-                [TestMethod]
-        public void Test_FAIL()
-        {
-            Assert.Fail();
-        }
     }
 }

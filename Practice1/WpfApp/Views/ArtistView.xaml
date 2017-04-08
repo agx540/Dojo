@@ -10,8 +10,7 @@
              d:DataContext="{d:DesignInstance Type=viewModel:SongViewModel, IsDesignTimeCreatable=True}">
     <Grid>
         <StackPanel Orientation="Horizontal">
-            <TextBlock Text="{Binding Id}"/>
-            <TextBox Text="{Binding Name}"/>
+            <TextBlock Text="{Binding Name}"/>
         </StackPanel>
     </Grid>
 </UserControl>

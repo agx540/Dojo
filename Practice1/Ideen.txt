@@ -3,4 +3,6 @@
 3. Model persistieren
 4. Web Frontend
 5. WPF Style hinzufügen
-6. 
+6. Datenbankanbindung für Model
+7. Anzeige der AlbenInterpreten abhängig der Interpreten aller Songs auf einem Album
+8. Beim Selektieren eines Albuminterpreten nur die Songs des dazugehörigen Interpreten anzeigen

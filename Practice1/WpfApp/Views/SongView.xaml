@@ -6,22 +6,32 @@
              xmlns:local="clr-namespace:WpfApp.Views"
              xmlns:viewModel="clr-namespace:WpfApp.ViewModel"
              mc:Ignorable="d" 
-             d:DesignHeight="200" d:DesignWidth="300"
              d:DataContext="{d:DesignInstance Type=viewModel:SongViewModel, IsDesignTimeCreatable=True}"
              >
     <Grid>
-        <StackPanel Orientation="Vertical">
-            <TextBlock Text="{Binding Id}"/>
-            <TextBox Text="{Binding Name}"/>
-            <TextBox Text="{Binding FormattedLength}"/>
-            <TextBlock Margin="15,0" Text="Interpreten:"/>
-            <ListView ItemsSource="{Binding Artists}" SelectedItem="{Binding SelectedArtist}">
+        <Border Margin="0 0 0 10" BorderBrush="Black" BorderThickness="1">
+        <DockPanel>
+            <Border DockPanel.Dock="Top" BorderBrush="Black" BorderThickness="0 0 0 2">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="{Binding Id}" Margin="5,0"/>
+                <TextBlock Text="{Binding Name}" Margin="5,0"/>
+                <TextBlock Text="Dauer:" Margin="5,0"/>
+                <TextBlock Text="{Binding FormattedLength}"/>
+        </StackPanel>
+            </Border>
+            
+        <TextBlock Margin="5,0" Text="Interpreten:"/>
+            <ListView BorderThickness="0" 
+                      ItemsSource="{Binding Artists}" 
+                      SelectedItem="{Binding SelectedArtist}"
+                      HorizontalAlignment="Stretch">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <local:ArtistView></local:ArtistView>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
-        </StackPanel>
+        </DockPanel>
+        </Border>
     </Grid>
 </UserControl>

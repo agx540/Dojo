@@ -11,7 +11,7 @@ namespace WpfApp.ViewModel
     public class AlbumViewModel : ObservableObject
     {
         private int _id;
-        public int ID
+        public int Id
         {
             get { return _id; }
             set { SetProperty(ref _id, value); }
@@ -67,7 +67,7 @@ namespace WpfApp.ViewModel
 
         public AlbumViewModel(Album album)
         {
-            ID = album.Id;
+            Id = album.Id;
             PublishYear = album.PublishYear;
             Name = album.Name;
             Artists = new ObservableCollection<ArtistViewModel>(album.Artists.Select(a => new ArtistViewModel(a)));
