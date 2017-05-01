@@ -4,14 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WpfApp.Model
+namespace Lib
 {
-    public class Album
+    public class Song
     {
         public int Id { get; set; }
-        public int PublishYear { get; set; }
-        public String Name { get; set; }
-        public List<Song> Songs { get; set; } = new List<Song>();
+        public int Track { get; set; }
+        public int AlbumId { get; set; }
+        public string Name { get; set; }
+        public TimeSpan Length { get; set; }
         public List<Artist> Artists { get; set; } = new List<Artist>();
     }
 }

@@ -52,7 +52,7 @@
                 <ListView BorderThickness="0" ItemsSource="{Binding Artists}" SelectedItem="{Binding SelectedArtist}">
                     <ListView.ItemTemplate>
                         <DataTemplate>
-                            <local:ArtistView></local:ArtistView>
+                            <local:ArtistView Margin="2,0,2,10"></local:ArtistView>
                         </DataTemplate>
                     </ListView.ItemTemplate>
                 </ListView>
@@ -66,7 +66,7 @@
                           SelectedItem="{Binding SelectedSong}">
                     <ListView.ItemTemplate>
                         <DataTemplate>
-                            <local:SongView></local:SongView>
+                            <local:SongView Margin="2,0,2,10"></local:SongView>
                         </DataTemplate>
                     </ListView.ItemTemplate>
                 </ListView>

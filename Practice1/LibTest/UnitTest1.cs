@@ -1,4 +1,5 @@
 ﻿using System;
+using Lib;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using WpfApp.Model;
 using WpfApp.ViewModel;

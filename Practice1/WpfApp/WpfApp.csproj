@@ -58,10 +58,8 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Bootstrapper.cs" />
-    <Compile Include="Model\Album.cs" />
-    <Compile Include="Model\Artist.cs" />
+    <Compile Include="Helper.cs" />
     <Compile Include="Model\Repository.cs" />
-    <Compile Include="Model\Song.cs" />
     <Compile Include="ViewModel\AlbumListViewModel.cs" />
     <Compile Include="ViewModel\AlbumViewModel.cs" />
     <Compile Include="ViewModel\ArtistViewModel.cs" />
@@ -136,7 +134,12 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\Lib\Lib\Lib.csproj">
+      <Project>{095413D8-2F70-4735-BEA5-C72553A2B3DA}</Project>
+      <Name>Lib</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

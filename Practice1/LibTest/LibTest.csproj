@@ -54,6 +54,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Lib\Lib\Lib.csproj">
+      <Project>{095413D8-2F70-4735-BEA5-C72553A2B3DA}</Project>
+      <Name>Lib</Name>
+    </ProjectReference>
     <ProjectReference Include="..\WpfApp\WpfApp.csproj">
       <Project>{84AF9EBA-C813-4A71-9AC7-AE4644BDE05B}</Project>
       <Name>WpfApp</Name>

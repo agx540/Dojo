@@ -20,7 +20,6 @@
                   Margin="5,0"
                   ItemsSource="{Binding Albums}" 
                   SelectedItem="{Binding SelectedAlbum}">
-            
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <TextBlock FontSize="14" 

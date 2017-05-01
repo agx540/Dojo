@@ -4,6 +4,8 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Controls.Primitives;
+using Lib;
 using WpfApp.Model;
 
 namespace WpfApp.ViewModel
@@ -31,7 +33,14 @@ namespace WpfApp.ViewModel
             set { SetProperty(ref _length, value); }
         }
 
+        public int Track
+        {
+            get { return _track; }
+            set { SetProperty(ref _track, value); }
+        }
+
         private ObservableCollection<ArtistViewModel> _artists = new ObservableCollection<ArtistViewModel>();
+
         public ObservableCollection<ArtistViewModel> Artists
         {
             get { return _artists; }
@@ -39,6 +48,8 @@ namespace WpfApp.ViewModel
         }
 
         private ArtistViewModel _selectedArtist;
+        private int _track;
+
         public ArtistViewModel SelectedArtist
         {
             get { return _selectedArtist; }
@@ -68,6 +79,7 @@ namespace WpfApp.ViewModel
         {
             Id = song.Id;
             Name = song.Name;
+            Track = song.Track;
             Length = song.Length;
             Artists = new ObservableCollection<ArtistViewModel>(song.Artists.Select(a => new ArtistViewModel(a)));
             SelectedArtist = Artists?.FirstOrDefault();
